@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <title>ГРАФИК ФУНКЦИЙ</title>
+
+    <link rel="stylesheet" href="main.css">
+    <script src="graph.js" defer></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>ГРАФИК ФУНКЦИЙ</h1>
+
+        <canvas id="canv" width="600" height="400">
+            Ваш браузер не поддерживает Canvas
+        </canvas>
+
+        <div class="function-block">
+            <label for="func">ФУНКЦИЯ:</label>
+            <input type="text" id="func" value="sin(x)">
+        </div>
+
+        <fieldset>
+            <legend>Параметры</legend>
+
+            <div class="section-title">Границы по X:</div>
+
+            <label>
+                x_left:
+                <input type="text" id="x_left" class="num" value="-1">
+            </label>
+
+            <label>
+                x_right:
+                <input type="text" id="x_right" class="num" value="10">
+            </label>
+
+            <br><br>
+
+            <div class="section-title">
+                Предельные значения функции:
+            </div>
+
+            <button onclick="calc_minmax();">
+                вычислить min/max
+            </button>
+
+            <br><br>
+
+            <label>
+                func_min:
+                <input type="text" id="func_min" class="num" readonly>
+            </label>
+
+            <label>
+                func_max:
+                <input type="text" id="func_max" class="num" readonly>
+            </label>
+
+            <br><br>
+
+            <div class="section-title">Границы по Y:</div>
+
+            <label>
+                y_down:
+                <input type="text" id="y_down" class="num" value="-1.5">
+            </label>
+
+            <label>
+                y_up:
+                <input type="text" id="y_up" class="num" value="1.5">
+            </label>
+
+            <br><br>
+
+            <div class="section-title">Цвет графика:</div>
+
+            <select id="pencolor">
+                <option value="red">Красный</option>
+                <option value="green">Зеленый</option>
+                <option value="blue" selected>Синий</option>
+                <option value="brown">Коричневый</option>
+                <option value="black">Черный</option>
+            </select>
+
+            <br><br>
+
+            <button onclick="draw_graph();">
+                нарисовать график
+            </button>
+
+            <button onclick="clear_canv();">
+                стереть всё
+            </button>
+
+        </fieldset>
+
+    </div>
+
+</body>
+
+</html>
